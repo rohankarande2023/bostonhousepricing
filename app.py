@@ -30,8 +30,8 @@ def predict():
     data=[float(x) for x in request.form.values()]
     final_input=std_scaler.transform(np.array(data).reshape(1,-1))
     print(final_input)
-    output=regmodel.predict(final_input)[0]
-    return render_template("home.html",prediction_text="The House price prediction is {}".format(output))
+    output1=regmodel.predict(final_input)[0]
+    return render_template("home.html",prediction_text="The House price prediction is {}".format(output1))
 
 
 if __name__ =='__main__':
